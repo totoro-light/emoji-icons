@@ -2,6 +2,8 @@
 
 A fast, searchable emoji browser. Click any emoji to copy it to your clipboard.
 
+Live at: https://totoro-light.github.io/emoji-icons/
+
 Built with vanilla JS + Vite, using [`unicode-emoji-json`](https://github.com/muan/unicode-emoji-json) for emoji data.
 
 ## Responsive Breakpoints
