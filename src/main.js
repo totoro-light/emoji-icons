@@ -56,7 +56,7 @@ let toastTimer = null
 // ─── Recent ───────────────────────────────────────────────────────────────────
 
 const RECENT_KEY = 'emoji-icons-recent'
-const RECENT_MAX = 30
+const RECENT_MAX = 16
 
 function getRecent() {
   try { return JSON.parse(localStorage.getItem(RECENT_KEY)) ?? [] } catch { return [] }
