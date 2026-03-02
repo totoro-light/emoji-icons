@@ -399,6 +399,85 @@ button {
   transform: translateX(-50%) translateY(0);
 }
 
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .main {
+    padding: 24px 16px 56px;
+  }
+
+  .emoji-grid {
+    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  }
+
+  .emoji-btn {
+    font-size: 2.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  /* Two-row header: [title | theme-btn] then [search full width] */
+  .header-inner {
+    flex-wrap: wrap;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .site-title {
+    flex: 1;
+    font-size: 1rem;
+  }
+
+  .theme-btn {
+    flex-shrink: 0;
+  }
+
+  .search-wrapper {
+    order: 3;
+    flex: 0 0 100%;
+    max-width: none;
+  }
+
+  .cat-nav {
+    padding: 6px 12px;
+    gap: 5px;
+  }
+
+  .cat-btn {
+    padding: 4px 11px;
+    font-size: 0.75rem;
+  }
+
+  .main {
+    padding: 16px 12px 48px;
+  }
+
+  .category-section {
+    margin-bottom: 24px;
+  }
+
+  .emoji-grid {
+    grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  }
+
+  .emoji-btn {
+    font-size: 1.75rem;
+  }
+
+  .empty {
+    padding: 40px 16px;
+  }
+}
+
+/* Disable scale transform on touch devices */
+@media (hover: none) {
+  .emoji-btn:hover {
+    transform: none;
+  }
+}
+
 /* ── Scrollbar ──────────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;
