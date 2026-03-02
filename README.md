@@ -13,3 +13,4 @@ pnpm deploy   # build + deploy to GitHub Pages
 ```
 # emoji-icons
 # emoji-icons
+# emoji-icons
