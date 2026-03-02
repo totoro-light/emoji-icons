@@ -140,9 +140,14 @@ button {
   transition: border-color 0.12s, color 0.12s;
 }
 
+.info-btn {
+  color: #16a34a;
+  border-color: #16a34a;
+}
+
 .info-btn:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+  border-color: #15803d;
+  color: #15803d;
 }
 
 .info-card {

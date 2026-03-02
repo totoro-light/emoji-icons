@@ -225,7 +225,7 @@ function init() {
         <button class="theme-btn" id="theme-btn" aria-label="Toggle theme"></button>
         <div class="info-wrap">
           <button class="info-btn" aria-label="About this site">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-7v-2h2v6h-2v-4zm0-4V7h2v2h-2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-13 2S2 9 2 14a5.45 5.45 0 0 0 2.21 4.5l.41-1A9.65 9.65 0 0 1 4 14c0-4 4-5.5 9-5.5S18.5 9 17 8Z"/></svg>
           </button>
           <div class="info-card" role="tooltip">
             <p class="info-title">About</p>
