@@ -53,6 +53,73 @@ let activeCategory = 'all'
 let searchQuery = ''
 let toastTimer = null
 
+// ─── Recent ───────────────────────────────────────────────────────────────────
+
+const RECENT_KEY = 'emoji-icons-recent'
+const RECENT_MAX = 30
+
+function getRecent() {
+  try { return JSON.parse(localStorage.getItem(RECENT_KEY)) ?? [] } catch { return [] }
+}
+
+function saveRecent(list) {
+  localStorage.setItem(RECENT_KEY, JSON.stringify(list))
+}
+
+function addRecent(emoji) {
+  const list = [emoji, ...getRecent().filter(e => e !== emoji)].slice(0, RECENT_MAX)
+  saveRecent(list)
+  renderRecent()
+}
+
+function removeRecent(emoji) {
+  saveRecent(getRecent().filter(e => e !== emoji))
+  renderRecent()
+}
+
+function clearRecent() {
+  saveRecent([])
+  renderRecent()
+}
+
+function renderRecent() {
+  const container = document.getElementById('recent')
+  if (!container) return
+  const list = getRecent()
+  if (list.length === 0) {
+    container.hidden = true
+    container.innerHTML = ''
+    return
+  }
+  container.hidden = false
+  container.innerHTML = `
+    <section class="category-section recent-section">
+      <div class="recent-header">
+        <h2 class="category-title">Recently Used</h2>
+        <button class="recent-clear-btn" id="recent-clear">Clear all</button>
+      </div>
+      <div class="emoji-grid">
+        ${list.map(emoji => `
+          <div class="recent-item">
+            <button class="emoji-btn" data-emoji="${escapeHtml(emoji)}" aria-label="${escapeHtml(emoji)}">${emoji}</button>
+            <button class="recent-remove" data-emoji="${escapeHtml(emoji)}" aria-label="Remove ${escapeHtml(emoji)}">✕</button>
+          </div>
+        `).join('')}
+      </div>
+    </section>
+  `
+  document.getElementById('recent-clear').addEventListener('click', clearRecent)
+  container.querySelectorAll('.recent-remove').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation()
+      removeRecent(btn.dataset.emoji)
+    })
+  })
+  container.querySelectorAll('.emoji-btn').forEach(btn => {
+    btn.addEventListener('click', () => copyEmoji(btn.dataset.emoji))
+  })
+}
+
 // ─── Toast ────────────────────────────────────────────────────────────────────
 
 function showToast(msg) {
@@ -68,6 +135,7 @@ function showToast(msg) {
 async function copyEmoji(emoji) {
   try {
     await navigator.clipboard.writeText(emoji)
+    addRecent(emoji)
     showToast(`${emoji}  Copied!`)
   } catch {
     showToast('Copy failed — try again')
@@ -165,6 +233,7 @@ function init() {
       `).join('')}
     </nav>
 
+    <div id="recent" class="main" style="padding-bottom:0" hidden></div>
     <main id="main" class="main"></main>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
@@ -230,6 +299,7 @@ function init() {
     if (btn) copyEmoji(btn.dataset.emoji)
   })
 
+  renderRecent()
   renderGrid()
   searchInput.focus()
 }
