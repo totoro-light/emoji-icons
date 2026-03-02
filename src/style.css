@@ -258,7 +258,11 @@ button {
 .emoji-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
-  gap: 2px;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
 .emoji-btn {
@@ -268,9 +272,9 @@ button {
   aspect-ratio: 1;
   font-size: 2.625rem;
   line-height: 1;
-  background: transparent;
+  background: var(--surface);
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   cursor: pointer;
   transition: background 0.1s, transform 0.12s;
   user-select: none;
