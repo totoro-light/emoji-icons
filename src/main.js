@@ -1,4 +1,4 @@
-import emojiData from 'unicode-emoji-json/data-by-group.json'
+import emojiData from './data-by-group.json'
 import './style.css'
 
 // Skip "Component" — those are bare skin-tone modifiers, not usable standalone
