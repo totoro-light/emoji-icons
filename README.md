@@ -4,7 +4,7 @@ A fast, searchable emoji browser. Click any emoji to copy it to your clipboard.
 
 Live at: https://totoro-light.github.io/emoji-icons/
 
-Built with vanilla JS + Vite, using [`unicode-emoji-json`](https://github.com/muan/unicode-emoji-json) for emoji data.
+Built with vanilla JS + Vite. Emoji data is vendored locally from [`unicode-emoji-json@0.4.0`](https://github.com/muan/unicode-emoji-json) at `src/data-by-group.json`.
 
 ## Responsive Breakpoints
 
@@ -23,6 +23,3 @@ pnpm dev      # dev server
 pnpm build    # production build → dist/
 pnpm deploy   # build + deploy to GitHub Pages
 ```
-# emoji-icons
-# emoji-icons
-# emoji-icons
