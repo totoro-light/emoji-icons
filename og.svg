@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d0d12"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="fade-right" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#09090b" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#09090b" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="fade-left" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#09090b" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#09090b" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="emoji-clip">
+      <rect x="580" y="0" width="620" height="630"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Glow blobs -->
+  <circle cx="950" cy="315" r="320" fill="#4f46e5" opacity="0.07"/>
+  <circle cx="650" cy="580" r="180" fill="#7c3aed" opacity="0.05"/>
+
+  <!-- ── Emoji grid (right side) ── -->
+  <g clip-path="url(#emoji-clip)" opacity="0.9">
+    <!-- Row 1 -->
+    <text x="600"  y="118" font-size="76" font-family="system-ui, sans-serif">😀</text>
+    <text x="700"  y="118" font-size="76" font-family="system-ui, sans-serif">😂</text>
+    <text x="800"  y="118" font-size="76" font-family="system-ui, sans-serif">🥰</text>
+    <text x="900"  y="118" font-size="76" font-family="system-ui, sans-serif">😎</text>
+    <text x="1000" y="118" font-size="76" font-family="system-ui, sans-serif">🤩</text>
+    <text x="1100" y="118" font-size="76" font-family="system-ui, sans-serif">🥳</text>
+    <!-- Row 2 -->
+    <text x="600"  y="218" font-size="76" font-family="system-ui, sans-serif">🎉</text>
+    <text x="700"  y="218" font-size="76" font-family="system-ui, sans-serif">🔥</text>
+    <text x="800"  y="218" font-size="76" font-family="system-ui, sans-serif">✨</text>
+    <text x="900"  y="218" font-size="76" font-family="system-ui, sans-serif">💫</text>
+    <text x="1000" y="218" font-size="76" font-family="system-ui, sans-serif">⭐</text>
+    <text x="1100" y="218" font-size="76" font-family="system-ui, sans-serif">🌟</text>
+    <!-- Row 3 -->
+    <text x="600"  y="318" font-size="76" font-family="system-ui, sans-serif">🚀</text>
+    <text x="700"  y="318" font-size="76" font-family="system-ui, sans-serif">💎</text>
+    <text x="800"  y="318" font-size="76" font-family="system-ui, sans-serif">🎯</text>
+    <text x="900"  y="318" font-size="76" font-family="system-ui, sans-serif">🏆</text>
+    <text x="1000" y="318" font-size="76" font-family="system-ui, sans-serif">💡</text>
+    <text x="1100" y="318" font-size="76" font-family="system-ui, sans-serif">🎨</text>
+    <!-- Row 4 -->
+    <text x="600"  y="418" font-size="76" font-family="system-ui, sans-serif">🌈</text>
+    <text x="700"  y="418" font-size="76" font-family="system-ui, sans-serif">🦋</text>
+    <text x="800"  y="418" font-size="76" font-family="system-ui, sans-serif">🌺</text>
+    <text x="900"  y="418" font-size="76" font-family="system-ui, sans-serif">🍀</text>
+    <text x="1000" y="418" font-size="76" font-family="system-ui, sans-serif">🌸</text>
+    <text x="1100" y="418" font-size="76" font-family="system-ui, sans-serif">🦄</text>
+    <!-- Row 5 -->
+    <text x="600"  y="518" font-size="76" font-family="system-ui, sans-serif">🎵</text>
+    <text x="700"  y="518" font-size="76" font-family="system-ui, sans-serif">🎸</text>
+    <text x="800"  y="518" font-size="76" font-family="system-ui, sans-serif">🌍</text>
+    <text x="900"  y="518" font-size="76" font-family="system-ui, sans-serif">❤️</text>
+    <text x="1000" y="518" font-size="76" font-family="system-ui, sans-serif">🍕</text>
+    <text x="1100" y="518" font-size="76" font-family="system-ui, sans-serif">⚡</text>
+    <!-- Row 6 -->
+    <text x="600"  y="618" font-size="76" font-family="system-ui, sans-serif">🐶</text>
+    <text x="700"  y="618" font-size="76" font-family="system-ui, sans-serif">🐱</text>
+    <text x="800"  y="618" font-size="76" font-family="system-ui, sans-serif">🐼</text>
+    <text x="900"  y="618" font-size="76" font-family="system-ui, sans-serif">🦊</text>
+    <text x="1000" y="618" font-size="76" font-family="system-ui, sans-serif">🐸</text>
+    <text x="1100" y="618" font-size="76" font-family="system-ui, sans-serif">🦁</text>
+  </g>
+
+  <!-- Fade overlay: left edge of emoji area -->
+  <rect x="580" y="0" width="200" height="630" fill="url(#fade-left)"/>
+  <!-- Fade overlay: right edge -->
+  <rect x="980" y="0" width="220" height="630" fill="url(#fade-right)"/>
+
+  <!-- ── Left content ── -->
+
+  <!-- Indigo pill badge -->
+  <rect x="60" y="68" width="160" height="36" rx="18" fill="url(#accent)" opacity="0.15"/>
+  <rect x="60" y="68" width="160" height="36" rx="18" fill="none" stroke="#4f46e5" stroke-width="1" opacity="0.4"/>
+  <text x="140" y="91" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#818cf8" text-anchor="middle" letter-spacing="0.05em">EMOJI ICONS</text>
+
+  <!-- Title -->
+  <text x="60" y="188" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="700" fill="#fafafa" letter-spacing="-2">Search &amp;</text>
+  <text x="60" y="270" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="700" letter-spacing="-2">
+    <tspan fill="url(#accent)">Copy Emojis</tspan>
+  </text>
+  <text x="60" y="352" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="700" fill="#fafafa" letter-spacing="-2">Instantly.</text>
+
+  <!-- Divider -->
+  <rect x="60" y="382" width="48" height="3" rx="2" fill="url(#accent)"/>
+
+  <!-- Feature list -->
+  <text x="60" y="430" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#a1a1aa">⚡ One-click copy to clipboard</text>
+  <text x="60" y="466" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#a1a1aa">🕐 Recently used history</text>
+  <text x="60" y="502" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#a1a1aa">🌙 Dark &amp; light mode</text>
+  <text x="60" y="538" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#a1a1aa">📱 Mobile, tablet &amp; desktop</text>
+
+  <!-- URL -->
+  <text x="60" y="598" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#4f46e5" opacity="0.8">totoro-light.github.io/emoji-icons</text>
+</svg>
