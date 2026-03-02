@@ -237,6 +237,10 @@ function init() {
     <main id="main" class="main"></main>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <footer class="footer">
+      <a href="mailto:ethanstark.mars@gmail.com" class="footer-link">ethanstark.mars@gmail.com</a>
+    </footer>
   `
 
   // Theme toggle
