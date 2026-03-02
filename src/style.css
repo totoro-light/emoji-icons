@@ -325,6 +325,11 @@ button {
 
 .recent-item {
   position: relative;
+  background: var(--surface);
+}
+
+.recent-item .emoji-btn {
+  width: 100%;
 }
 
 .recent-remove {
