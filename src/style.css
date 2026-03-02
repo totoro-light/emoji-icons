@@ -25,7 +25,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --bg:           #09090b;
     --surface:      #18181b;
     --border:       #27272a;
@@ -35,6 +35,17 @@
     --toast-bg:     #fafafa;
     --toast-text:   #18181b;
   }
+}
+
+:root.dark {
+  --bg:           #09090b;
+  --surface:      #18181b;
+  --border:       #27272a;
+  --text:         #fafafa;
+  --text-muted:   #a1a1aa;
+  --emoji-hover:  #2e2061;
+  --toast-bg:     #fafafa;
+  --toast-text:   #18181b;
 }
 
 /* ── Base ───────────────────────────────────────────────────────────────────── */
@@ -86,6 +97,27 @@ button {
   color: var(--text);
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+/* ── Theme toggle ───────────────────────────────────────────────────────────── */
+.theme-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s, background 0.12s;
+}
+
+.theme-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 /* ── Search ─────────────────────────────────────────────────────────────────── */

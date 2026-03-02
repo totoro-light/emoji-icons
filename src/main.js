@@ -4,6 +4,51 @@ import './style.css'
 // Skip "Component" — those are bare skin-tone modifiers, not usable standalone
 const ALL_CATEGORIES = Object.keys(emojiData).filter(c => c !== 'Component')
 
+// ─── Theme ────────────────────────────────────────────────────────────────────
+
+const STORAGE_KEY = 'emoji-icons-theme'
+
+function systemPrefersDark() {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+}
+
+function getTheme() {
+  return localStorage.getItem(STORAGE_KEY) // 'dark' | 'light' | null
+}
+
+function applyTheme(theme) {
+  document.documentElement.classList.toggle('dark', theme === 'dark')
+  document.documentElement.classList.toggle('light', theme === 'light')
+}
+
+function initTheme() {
+  const saved = getTheme()
+  applyTheme(saved ?? (systemPrefersDark() ? 'dark' : 'light'))
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.classList.contains('dark')
+    || (!document.documentElement.classList.contains('light') && systemPrefersDark())
+  const next = isDark ? 'light' : 'dark'
+  localStorage.setItem(STORAGE_KEY, next)
+  applyTheme(next)
+  updateThemeIcon()
+}
+
+function updateThemeIcon() {
+  const btn = document.getElementById('theme-btn')
+  if (!btn) return
+  const isDark = document.documentElement.classList.contains('dark')
+    || (!document.documentElement.classList.contains('light') && systemPrefersDark())
+  btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode')
+  btn.innerHTML = isDark ? SUN_ICON : MOON_ICON
+}
+
+const MOON_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>`
+const SUN_ICON  = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.929zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85 1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></svg>`
+
+initTheme()
+
 let activeCategory = 'all'
 let searchQuery = ''
 let toastTimer = null
@@ -109,6 +154,7 @@ function init() {
           />
           <button class="search-clear" id="search-clear" aria-label="Clear search" hidden>✕</button>
         </div>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme"></button>
       </div>
     </header>
 
@@ -123,6 +169,10 @@ function init() {
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
   `
+
+  // Theme toggle
+  document.getElementById('theme-btn').addEventListener('click', toggleTheme)
+  updateThemeIcon()
 
   // Adjust cat-nav sticky top to sit just below the header
   const header = document.getElementById('header')
